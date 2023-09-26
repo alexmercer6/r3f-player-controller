@@ -2,6 +2,7 @@ import { OrbitControls } from '@react-three/drei';
 import { Ground } from './Ground';
 import { RigidBody } from '@react-three/rapier';
 import { ReactElement, useEffect, useState } from 'react';
+import { Environment } from '@react-three/drei';
 
 const Experience = () => {
   const [boxes, setBoxes] = useState<ReactElement[]>([]);
@@ -24,6 +25,12 @@ const Experience = () => {
 
   return (
     <>
+      <Environment
+        files="public/clouds.hdr"
+        background
+        // blur={0.5}
+      />
+
       <OrbitControls />
       {boxes}
       <Ground />
