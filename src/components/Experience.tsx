@@ -3,6 +3,8 @@ import { Ground } from './Ground';
 import { RigidBody } from '@react-three/rapier';
 import { ReactElement, useEffect, useState } from 'react';
 import { Environment } from '@react-three/drei';
+import { Model } from './Model';
+import { CharacterController } from './CharacterController';
 
 const Experience = () => {
   const [boxes, setBoxes] = useState<ReactElement[]>([]);
@@ -26,12 +28,13 @@ const Experience = () => {
   return (
     <>
       <Environment
-        files="public/clouds.hdr"
+        files="/clouds.hdr"
         background
         // blur={0.5}
       />
 
       <OrbitControls />
+      <CharacterController />
       {boxes}
       <Ground />
     </>

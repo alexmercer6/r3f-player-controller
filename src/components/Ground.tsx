@@ -13,6 +13,7 @@ export const Ground = () => {
       friction={2}
     >
       <mesh
+        userData={{ ground: true }}
         ref={ground}
         rotation={[-Math.PI / 2, 0, 0]}
         position={[0, -1, 0]}
